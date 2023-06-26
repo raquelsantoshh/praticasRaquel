@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Busca de Nomes</title>
+</head>
+<body>
+  <h1>Busca de Nomes</h1>
+  <input type="text" id="searchInput" placeholder="Digite um nome">
+  <button onclick="buscarNome()">Buscar</button>
+  <div id="result"></div>
+  <script>
+    var nomes = ['Elane', 'Zeze', 'Hayfra', 'Aime', 'Raquel'];
+
+    function buscarNome() {
+      var searchTerm = document.getElementById('searchInput').value;
+
+      var resultado = nomes.find(function(nome) {
+        return nome.toLowerCase() === searchTerm.toLowerCase();
+      });
+
+      if (resultado) {
+        document.getElementById('result').innerText = "Nome encontrado: " + resultado;
+      } else {
+        document.getElementById('result').innerText = "Nome nao encontrado.";
+      }
+    }
+  </script>
+</body>
+</html>
